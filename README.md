@@ -74,11 +74,9 @@ Abra seu navegador e navegue para `http://localhost:5678`.
 
 ## Desafios e Aprendizados
 
-*(Esta é a sua seção pessoal\! Use o exemplo abaixo como inspiração para escrever com as suas palavras.)*
+O desenvolvimento deste conector foi uma oportunidade valiosa para expandir minhas habilidades, especialmente em tecnologias que eu ainda estava explorando. Minha experiência com TypeScript e Docker era limitada, o que tornou o projeto um desafio de aprendizado intensivo e prático. A configuração do ambiente com Docker Compose foi um dos pontos mais desafiadores, mas me ensinou a importância de criar ambientes de desenvolvimento isolados e eficientes.
 
-O desenvolvimento deste conector foi uma jornada de aprendizado prático e intenso. O principal desafio foi superar os erros de compatibilidade de tipos em TypeScript, o que exigiu uma depuração metódica e me ensinou a importância de entender profundamente o ecossistema de um framework.
-
-Além disso, a configuração do ambiente com Docker Compose reforçou meu conhecimento sobre a criação de ambientes de desenvolvimento consistentes e isolados. O resultado final não é apenas a solução de um problema, mas um projeto que reflete minha capacidade de aprender novas tecnologias, persistir diante de obstáculos e entregar um software funcional e de qualidade.
+Ademais, a resolução dos complexos erros de compatibilidade de tipos em TypeScript refinou minhas habilidades de depuração e me ensinou a importância de um pensamento analítico e persistente. Em suma, este projeto é mais do que a entrega de uma solução técnica; é a prova da minha capacidade de aprender e me adaptar rapidamente a novas tecnologias, enfrentando obstáculos com resiliência e foco na qualidade.
 
 ```
 ```

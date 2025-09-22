@@ -78,9 +78,10 @@ O projeto inclui testes unitários que garantem a qualidade do código e a confi
 Como Executar
 Para rodar os testes, basta executar o comando abaixo no terminal, na pasta raiz do projeto:
 
-Bash
+```Bash
 
-npm test
+npm test```
+
 A execução dos testes não requer o ambiente n8n em funcionamento, pois as dependências externas são simuladas durante o processo para garantir que os testes sejam rápidos e confiáveis.
 
 ## Desafios e Aprendizados

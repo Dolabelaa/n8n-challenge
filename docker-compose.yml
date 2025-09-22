@@ -1,0 +1,37 @@
+version: '3.1'
+
+services:
+  postgres:
+    image: postgres:11
+    restart: always
+    environment:
+      - POSTGRES_USER=n8n
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=n8n
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  n8n:
+    image: n8nio/n8n:latest # Usando a versão mais recente e estável
+    restart: always
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n
+      - DB_POSTGRESDB_USER=n8n
+      - DB_POSTGRESDB_PASSWORD=mysecretpassword
+      - N8N_HOST=localhost
+      - NODE_ENV=development
+    ports:
+      - 5678:5678
+    links:
+      - postgres
+    volumes:
+      # Esta linha conecta o seu código compilado com o n8n
+      - ./dist:/home/node/.n8n/custom
+
+volumes:
+  postgres_data:

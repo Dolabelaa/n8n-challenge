@@ -1,48 +1,84 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+# Conector n8n Customizado: True Random Number Generator
 
-# n8n-nodes-starter
+## Visão Geral
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](https://n8n.io). It includes the node linter and other dependencies.
+Este repositório contém a solução para o desafio técnico proposto pela **Onfly** para a vaga de estágio em tecnologia. O objetivo foi desenvolver um nó (conector) customizado para a plataforma de automação low-code n8n, demonstrando habilidades em desenvolvimento back-end, integração com APIs e uso de ambientes containerizados com Docker.
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+O resultado é um nó de automação robusto e reutilizável que se integra à API do `Random.org` para gerar números aleatórios verdadeiros, enriquecendo o resultado com informações adicionais e oferecendo tratamento de erros amigável.
 
-If you would like your node to be available on n8n cloud you can also [submit your node for verification](https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/).
+## Principais Funcionalidades
 
-## Prerequisites
+* **Geração de Números Aleatórios:** Utiliza o endpoint `integers` da API do Random.org para garantir a aleatoriedade.
+* **Validação de Intervalo:** Verifica se o valor mínimo inserido não é maior que o valor máximo, retornando um erro claro na saída do nó.
+* **Enriquecimento de Dados:** Além do número gerado, o nó adiciona dois campos extras ao resultado:
+    * `verificacao`: Informa se o número é "Par" ou "Ímpar".
+    * `geradoEm`: Adiciona um timestamp no formato ISO 8601 de quando o número foi gerado.
 
-You need the following installed on your development machine:
+## Tecnologias Utilizadas
 
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 20. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-  ```
-  npm install n8n -g
-  ```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+* **TypeScript**
+* **Node.js**
+* **Docker & Docker Compose**
+* **PostgreSQL**
+* **n8n** (Ambiente de desenvolvimento e execução)
 
-## Using this starter
+## Pré-requisitos
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+Para executar este projeto localmente, você precisará ter instalado:
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-   ```
-   git clone https://github.com/<your organization>/<your-repo-name>.git
-   ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+* [Node.js](https://nodejs.org/) (versão 22 LTS ou superior)
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-## More information
+## Executando o Projeto
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+Siga os passos abaixo para configurar e iniciar o ambiente de desenvolvimento.
 
-## License
+**1. Clonar o Repositório**
+```bash
+git clone https://github.com/Dolabelaa/n8n-challenge.git
+cd n8n-challenge
+````
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+**2. Instalar Dependências**
+Execute o comando abaixo para instalar as dependências do projeto listadas no `package.json`.
+
+```bash
+npm install
+```
+
+**3. Compilar o Conector**
+Este passo transpila o código-fonte de TypeScript para JavaScript, gerando a versão final na pasta `/dist`.
+
+```bash
+npm run build
+```
+
+**4. Iniciar o Ambiente**
+Com o Docker Desktop em execução, suba os containers do n8n e do PostgreSQL.
+
+```bash
+docker-compose up -d
+```
+
+Após alguns instantes, a instância do n8n estará acessível em seu navegador.
+
+**5. Acessar a Plataforma**
+Abra seu navegador e navegue para `http://localhost:5678`.
+
+## Como Utilizar o Conector
+
+1.  Na interface do n8n, crie um novo workflow.
+2.  Clique no `+` para adicionar um nó e pesquise por "**Random**".
+3.  Configure os parâmetros `ValorMinimo` e `ValorMaximo`.
+4.  Execute o nó para ver o resultado no painel de saída (Output).
+
+## Desafios e Aprendizados
+
+*(Esta é a sua seção pessoal\! Use o exemplo abaixo como inspiração para escrever com as suas palavras.)*
+
+O desenvolvimento deste conector foi uma jornada de aprendizado prático e intenso. O principal desafio foi superar os erros de compatibilidade de tipos em TypeScript, o que exigiu uma depuração metódica e me ensinou a importância de entender profundamente o ecossistema de um framework.
+
+Além disso, a configuração do ambiente com Docker Compose reforçou meu conhecimento sobre a criação de ambientes de desenvolvimento consistentes e isolados. O resultado final não é apenas a solução de um problema, mas um projeto que reflete minha capacidade de aprender novas tecnologias, persistir diante de obstáculos e entregar um software funcional e de qualidade.
+
+```
+```

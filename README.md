@@ -72,11 +72,19 @@ Abra seu navegador e navegue para `http://localhost:5678`.
 3.  Configure os parâmetros `ValorMinimo` e `ValorMaximo`.
 4.  Execute o nó para ver o resultado no painel de saída (Output).
 
+## Testes Unitários
+O projeto inclui testes unitários que garantem a qualidade do código e a confiabilidade da lógica de negócio. Os testes validam o comportamento do conector em diferentes cenários, como requisições bem-sucedidas, tratamento de entradas inválidas e falhas na comunicação com a API.
+
+Como Executar
+Para rodar os testes, basta executar o comando abaixo no terminal, na pasta raiz do projeto:
+
+Bash
+
+npm test
+A execução dos testes não requer o ambiente n8n em funcionamento, pois as dependências externas são simuladas durante o processo para garantir que os testes sejam rápidos e confiáveis.
+
 ## Desafios e Aprendizados
 
 O desenvolvimento deste conector foi uma oportunidade valiosa para expandir minhas habilidades, especialmente em tecnologias que eu ainda estava explorando. Minha experiência com TypeScript e Docker era limitada, o que tornou o projeto um desafio de aprendizado intensivo e prático. A configuração do ambiente com Docker Compose foi um dos pontos mais desafiadores, mas me ensinou a importância de criar ambientes de desenvolvimento isolados e eficientes.
 
 Ademais, a resolução dos complexos erros de compatibilidade de tipos em TypeScript refinou minhas habilidades de depuração e me ensinou a importância de um pensamento analítico e persistente. Em suma, este projeto é mais do que a entrega de uma solução técnica; é a prova da minha capacidade de aprender e me adaptar rapidamente a novas tecnologias, enfrentando obstáculos com resiliência e foco na qualidade.
-
-```
-```

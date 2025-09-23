@@ -6,6 +6,8 @@ Este repositório contém a solução para o desafio técnico proposto pela **On
 
 O resultado é um nó de automação robusto e reutilizável que se integra à API do `Random.org` para gerar números aleatórios verdadeiros, enriquecendo o resultado com informações adicionais e oferecendo tratamento de erros amigável.
 
+Este projeto foi desenvolvido utilizando o template oficial [n8n-nodes-starter](https://github.com/n8n-io/n8n-nodes-starter) como base para a estrutura inicial do nó.
+
 ## Principais Funcionalidades
 
 * **Geração de Números Aleatórios:** Utiliza o endpoint `integers` da API do Random.org para garantir a aleatoriedade.
